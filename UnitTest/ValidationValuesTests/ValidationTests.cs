@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBManager.Entities.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "IntegerColumn", DBManager.Models.ColumnType.Integer, new List<string>());
+            var createColRes = dBManager.CreateColumn(table, "IntegerColumn", ColumnType.Integer, new List<string>());
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "1");
@@ -36,7 +37,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "IntegerColumn", DBManager.Models.ColumnType.Integer, new List<string>());
+            var createColRes = dBManager.CreateColumn(table, "IntegerColumn", ColumnType.Integer, new List<string>());
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "1.1");
@@ -50,7 +51,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "RealColumn", DBManager.Models.ColumnType.Real, new List<string>());
+            var createColRes = dBManager.CreateColumn(table, "RealColumn", ColumnType.Real, new List<string>());
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "1,1");
@@ -64,7 +65,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "RealColumn", DBManager.Models.ColumnType.Real, new List<string>());
+            var createColRes = dBManager.CreateColumn(table, "RealColumn", ColumnType.Real, new List<string>());
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "1.1w");
@@ -78,7 +79,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "CharColumn", DBManager.Models.ColumnType.Char, new List<string>());
+            var createColRes = dBManager.CreateColumn(table, "CharColumn", ColumnType.Char, new List<string>());
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "c");
@@ -92,7 +93,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "CharColumn", DBManager.Models.ColumnType.Char, new List<string>());
+            var createColRes = dBManager.CreateColumn(table, "CharColumn", ColumnType.Char, new List<string>());
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "ct");
@@ -106,7 +107,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "EmailColumn", DBManager.Models.ColumnType.Email, new List<string>());
+            var createColRes = dBManager.CreateColumn(table, "EmailColumn", ColumnType.Email, new List<string>());
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "test@test.test");
@@ -120,7 +121,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "EmailColumn", DBManager.Models.ColumnType.Email, new List<string>());
+            var createColRes = dBManager.CreateColumn(table, "EmailColumn", ColumnType.Email, new List<string>());
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "test");
@@ -134,7 +135,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "EnumColumn", DBManager.Models.ColumnType.Enum, new List<string>() { "dog", "cat"});
+            var createColRes = dBManager.CreateColumn(table, "EnumColumn", ColumnType.Enum, new List<string>() { "dog", "cat"});
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "dog");
@@ -148,7 +149,7 @@ namespace UnitTest.ValidationValuesTests
             //Arrange
             Setup();
             var table = dBManager.Database.Tables.FirstOrDefault();
-            var createColRes = dBManager.CreateColumn(table, "EnumColumn", DBManager.Models.ColumnType.Enum, new List<string>() { "dog", "cat" });
+            var createColRes = dBManager.CreateColumn(table, "EnumColumn", ColumnType.Enum, new List<string>() { "dog", "cat" });
             dBManager.CreateRow(table);
             //Act
             var res = dBManager.EditCell(table, 0, 0, "bird");

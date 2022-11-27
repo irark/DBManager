@@ -1,4 +1,5 @@
-﻿using DBManager.Models;
+﻿using DBManager.Entities.Models;
+using DBManager.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

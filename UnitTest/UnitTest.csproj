@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DBManagerEntities\DBManager.Entities.csproj" />
     <ProjectReference Include="..\DBManager\DBManager.csproj" />
   </ItemGroup>
 
