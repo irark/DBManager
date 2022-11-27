@@ -1,5 +1,5 @@
 @using DBManager.Mobile.Components.DropDownComponent
-@using DBManager.Mobile.Models
+@using DBManager.Mobile
 <div class="database-create" style="min-height: 50vh">
     <EditForm EditContext="_editContext" Context="EdiForm">
         <DataAnnotationsValidator/>
@@ -10,10 +10,10 @@
                 <ValidationMessage For="() => Column.Name"></ValidationMessage>
             </label>
         </div>
-        <div class="base-input-container">
-            <label class="base-input base-input-custom-select">
+        <div class="base-input-container w-100">
+            <label class="base-input base-input-custom-select w-100">
 
-                <Dropdown TItem="ColumnType" OnSelected="@((val) => Column.Type = val)" IgnoreMinWidth="true">
+                <Dropdown TItem="DBManager.Mobile.ColumnType" OnSelected="@((val) => Column.Type = val)" IgnoreMinWidth="true">
                     <InitialTip>Type</InitialTip>
                     <SelectedOneItem>@Column.Type.ToString()</SelectedOneItem>
                     <ChildContent >

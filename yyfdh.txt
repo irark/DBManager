@@ -1,0 +1,11 @@
+tt
+table1
+name	String	%age	Integer	%type	Enum	cat,dog%
+david	11	dog
+ann	12	cat
+$
+table2
+name	String	%email	Email	%type	Enum	cat,dog%
+david	david@dav.com	dog
+ann	ann@ann.com	dog
+$

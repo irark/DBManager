@@ -63,3 +63,13 @@
     justify-content: center;
     padding: 0 !important;
 }
+.modal-footer{
+    flex-wrap: unset;
+}
+    .modal-footer button{
+        min-width: unset;
+        width: 50%;
+    }
+    .modal-footer button:last-of-type {
+       margin-right:0;
+    }

@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 using Blazored.Modal;
 using Blazored.Modal.Services;
 using Blazored.Toast.Services;
-using DBManager.Mobile.Models;
-using DBManager.Mobile.Services.HttpServices;
+using DBManager.Mobile.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 
@@ -18,7 +17,7 @@ namespace DBManager.Mobile.Components
         [Parameter] public string TableName { get; set; }
         [Inject] public ColumnService ColumnService { get; set; }
         [Inject] public IToastService ToastService { get; set; }
-        private ColumnViewModel Column { get; set; } = new();
+        private Column Column { get; set; } = new();
         private string _availableValues;
 
         private EditContext _editContext;
@@ -52,7 +51,8 @@ namespace DBManager.Mobile.Components
         {
             try
             {
-                Column.AvailableValues = _availableValues?.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList() ?? new List<string>();
+                Column.AvailableValues.Clear();
+                Column.AvailableValues.AddRange(_availableValues?.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList() ?? new List<string>());
                 var isValid = _editContext.Validate();
                 if (!isValid)
                     return;

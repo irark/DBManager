@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "DBManager.Mobile";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "Protos/models.proto";
+package column;
+
+service Columns {
+  rpc CreateColumn (CreateColumnRequest) returns (models.Column);
+  rpc RenameColumn (RenameColumnRequest) returns (google.protobuf.BoolValue);
+  rpc DeleteColumn (DeleteColumnRequest) returns (google.protobuf.BoolValue);
+}
+
+message CreateColumnRequest{
+	string tableName = 1;
+	models.Column column = 2;
+}
+message RenameColumnRequest{
+	string tableName = 1;
+	string oldName = 2;
+	string newName = 3;
+}
+message DeleteColumnRequest{
+	string tableName = 1;
+	int32 columnIndex = 2;
+}

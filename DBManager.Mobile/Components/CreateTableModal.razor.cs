@@ -3,8 +3,7 @@ using System.Threading.Tasks;
 using Blazored.Modal;
 using Blazored.Modal.Services;
 using Blazored.Toast.Services;
-using DBManager.Mobile.Models;
-using DBManager.Mobile.Services.HttpServices;
+using DBManager.Mobile.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 
@@ -15,7 +14,7 @@ namespace DBManager.Mobile.Components
         [CascadingParameter] public BlazoredModalInstance BlazoredModal { get; set; }
         [Inject] public TableService TableService { get; set; }
         [Inject] public IToastService ToastService { get; set; }
-        private TableViewModel Table { get; set; } = new();
+        private Table Table { get; set; } = new();
 
         private EditContext _editContext;
         private ValidationMessageStore _messageStore;

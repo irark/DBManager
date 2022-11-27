@@ -12,6 +12,15 @@
   <component name="ChangeListManager">
     <list default="true" id="10ceceb9-6797-4d0a-b151-cf8d38c72c16" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DBManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DBManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBManager.Business/DBHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DBManager.Business/DBHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBManager.Mobile/Components/AddColumnModal.razor" beforeDir="false" afterPath="$PROJECT_DIR$/DBManager.Mobile/Components/AddColumnModal.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBManager.Mobile/DBManager.Mobile.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DBManager.Mobile/DBManager.Mobile.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBManager.Mobile/Platforms/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DBManager.Mobile/Platforms/Android/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBManager.Mobile/Services/HttpServices/HttpServiceBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DBManager.Mobile/Services/HttpServices/HttpServiceBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBManager.Mobile/wwwroot/css/components/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/DBManager.Mobile/wwwroot/css/components/card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBManager.Mobile/wwwroot/css/components/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/DBManager.Mobile/wwwroot/css/components/modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBManager.Mobile/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DBManager.Mobile/wwwroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBManager.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DBManager.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +71,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="settings.editor.selected.configurable" value="RiderNuGetOptionsPageId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -208,6 +218,7 @@
       <workItem from="1665819461153" duration="5697000" />
       <workItem from="1665827785651" duration="20407000" />
       <workItem from="1667734856976" duration="135000" />
+      <workItem from="1668257097603" duration="594000" />
     </task>
     <task id="LOCAL-00001" summary="added ui, fixed api">
       <created>1665928217679</created>

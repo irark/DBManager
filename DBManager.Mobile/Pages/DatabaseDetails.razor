@@ -1,0 +1,48 @@
+@page "/database/{DatabasePath}"
+<div class="card-component grid-card w-100 ">
+    <div class="card-component-header">
+        <div class="card-component-header-text">@Database.Name <div class="edit-icon ml-3" @onclick="EditName"></div></div>
+        
+    </div>
+    <div class="card-component-toolbar">
+        @if (Database.Tables?.Count > 1)
+        {
+            <div @onclick="Difference">
+                Difference
+            </div>
+        }
+        <div @onclick="Create">
+            <div class="add-icon"></div>
+            Add
+        </div>
+    </div>
+    <div class="table-custom-body">
+        <div class="data-grid-container">
+            <table class="data-grid ">
+                <thead>
+                <th>Name</th>
+                <th style="width: 3rem; ">
+                </th>
+                <th style="width: 3rem; ">
+                </th>
+                </thead>
+                <tbody>
+                @foreach (var table in Database.Tables)
+                {
+                    <tr>
+                        <td class="data-grid-cell">
+                            @table.Name
+                        </td>
+                        <td class="data-grid-cell" style="width: 3rem;" @onclick="() => Open(table.Name)">
+                            <div class="edit-icon"></div>
+                        </td>
+                        <td class="data-grid-cell" style="width: 3rem;" @onclick="() => Delete(table.Name)">
+                            <div class="delete-icon"></div>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

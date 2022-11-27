@@ -108,6 +108,7 @@ namespace DBManager.Business
                 var databases = GetAllDatabases() ?? new List<Database>();
                 if (!databases.Exists(i => i.Path == _database.Path))
                     WriteDatabase();
+                SaveDatabase();
                 return _database;
             }
             catch

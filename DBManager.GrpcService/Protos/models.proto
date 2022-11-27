@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option csharp_namespace = "DBManager.GrpcService";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+package models;
+
+service Models {
+ 
+}
+message Database {
+  string name = 1;
+  string path = 2;
+  repeated Table tables = 3;
+}
+
+message Table {
+  string name = 1;
+  repeated Column columns= 2;
+  repeated Row rows= 3;
+}
+
+message Column {
+  string name = 1;
+  ColumnType type = 2;
+  repeated string availableValues= 3;
+}
+enum ColumnType {
+  COLUMN_TYPE_INTEGER = 0;
+  COLUMN_TYPE_REAL = 1;
+  COLUMN_TYPE_CHAR = 2;
+  COLUMN_TYPE_STRING = 3;
+  COLUMN_TYPE_ENUM = 4;
+  COLUMN_TYPE_EMAIL = 5;
+}
+
+message Row {
+  repeated string values= 1;
+}

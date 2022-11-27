@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBManager.WebUi", "DBManage
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTest.csproj", "{B2AAA3FC-B6B6-48F3-8200-A05BA4AACD52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBManager.Mobile", "DBManager.Mobile\DBManager.Mobile.csproj", "{15CD26C7-D429-427B-8E28-40032A631853}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBManager.Mobile", "DBManager.Mobile\DBManager.Mobile.csproj", "{15CD26C7-D429-427B-8E28-40032A631853}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBManager.GrpcService", "DBManager.GrpcService\DBManager.GrpcService.csproj", "{5BD9DDAB-04A8-476C-8822-3402D957EA50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{15CD26C7-D429-427B-8E28-40032A631853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15CD26C7-D429-427B-8E28-40032A631853}.Release|Any CPU.Build.0 = Release|Any CPU
 		{15CD26C7-D429-427B-8E28-40032A631853}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5BD9DDAB-04A8-476C-8822-3402D957EA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BD9DDAB-04A8-476C-8822-3402D957EA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BD9DDAB-04A8-476C-8822-3402D957EA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BD9DDAB-04A8-476C-8822-3402D957EA50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,8 +4,7 @@ using System.Threading.Tasks;
 using Blazored.Modal;
 using Blazored.Modal.Services;
 using Blazored.Toast.Services;
-using DBManager.Mobile.Models;
-using DBManager.Mobile.Services.HttpServices;
+using DBManager.Mobile.Services;
 using Microsoft.AspNetCore.Components;
 
 namespace DBManager.Mobile.Components
@@ -13,12 +12,12 @@ namespace DBManager.Mobile.Components
     public partial class TablesDifferenceModal:ComponentBase
     {
         [CascadingParameter] public BlazoredModalInstance BlazoredModal { get; set; }
-        [Parameter]public List<TableViewModel> Tables { get; set; } = new();
+        [Parameter]public List<Table> Tables { get; set; } = new();
         [Inject] public IToastService ToastService { get; set; }
         [Inject] public TableService TableService { get; set; }
         public string FirstTableName { get; set; }
         public string SecondTableName { get; set; }
-        public TableViewModel Result { get; set; }
+        public Table Result { get; set; }
         private void Cancel()
         {
             BlazoredModal.Close(ModalResult.Cancel());

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "DBManager.GrpcService";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "Protos/models.proto";
+package database;
+
+service Databases {
+  rpc GetAllDatabases (google.protobuf.Empty) returns (GetAllDatabasesResponse);
+  rpc OpenDatabase (google.protobuf.StringValue) returns (models.Database);
+  rpc RenameDatabase (google.protobuf.StringValue) returns (google.protobuf.BoolValue);
+  rpc CreateDatabase (models.Database) returns (models.Database);
+  rpc SaveDatabase (google.protobuf.Empty) returns (google.protobuf.BoolValue);
+  rpc DeleteDataBase (google.protobuf.Empty) returns (google.protobuf.BoolValue);
+  rpc DeleteDataBaseByPath (google.protobuf.StringValue) returns (google.protobuf.BoolValue);
+}
+
+message GetAllDatabasesResponse {
+  repeated models.Database databases = 1;
+}
+

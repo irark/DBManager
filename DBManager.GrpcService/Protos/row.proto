@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "DBManager.GrpcService";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "Protos/models.proto";
+package row;
+
+service Rows {
+  rpc CreateRow (google.protobuf.StringValue) returns (models.Row);
+  rpc DeleteRow (DeleteRowRequest) returns (google.protobuf.BoolValue);
+  rpc EditCell (EditCellRequest) returns (google.protobuf.BoolValue);
+}
+
+message DeleteRowRequest{
+	string tableName = 1;
+	int32 rowIndex = 2;
+}
+message EditCellRequest{
+	string tableName = 1;
+	int32 columnIndex = 2;
+	int32 rowIndex = 3;
+	string newValue = 4;
+}

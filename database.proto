@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+	
+package database;
+
+service DatabaseService {
+  rpc GetAllDatabases (google.protobuf.Empty) returns (GetAllDatabasesResponse);
+  rpc OpenDatabase (string) returns (Database);
+  rpc RenameDatabase (string) returns (bool);
+  rpc CreateDatabase (Database) returns (Database);
+  rpc SaveDatabase (google.protobuf.Empty) returns (bool);
+  rpc DeleteDataBase (google.protobuf.Empty) returns (bool);
+  rpc DeleteDataBaseByPath (string) returns (bool);
+}
+
+message GetAllDatabasesResponse {
+  repeated Database databases = 1;
+}
+
+message Database {
+  string name = 1;
+  string path = 2;
+  repeated Table tables = 3;
+}
+
+message Table {
+  string name = 1;
+  srepeated Column columns= 2;
+  repeated Row rows= 3;
+}
+
+message Column {
+  string name = 1;
+  int32 type = 2;
+  repeated string availableValues= 3;
+}
+
+message Row {
+  repeated string values= 1;
+}

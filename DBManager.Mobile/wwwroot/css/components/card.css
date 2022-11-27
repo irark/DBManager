@@ -15,10 +15,11 @@
     align-items: center;
     justify-content: space-between;
 }
-.card-component-toolbar{
+.card-component-toolbar {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     gap: 1rem;
+    margin-bottom: 1rem;
     align-items: center;
 }
 .card-component-toolbar > div{

@@ -7,9 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DBManager.Mobile.Services.HttpServices;
-using DBManager.Mobile.Models;
 using DBManager.Mobile.Components;
+using DBManager;
+using Grpc.Net.Client;
+using Google.Protobuf.WellKnownTypes;
+using DBManager.Mobile.Services;
 
 namespace DBManager.Mobile.Pages
 {
@@ -19,7 +21,7 @@ namespace DBManager.Mobile.Pages
         [Inject] public DatabaseService DatabaseService { get; set; }
         [Inject] public IToastService ToastService { get; set; }
         [Inject] public NavigationManager NavigationManager { get; set; }
-        private List<DatabaseViewModel> AllDatabases { get; set; } = new();
+        private List<Database> AllDatabases { get; set; } = new();
 
         protected override async Task OnInitializedAsync()
         {
@@ -30,7 +32,7 @@ namespace DBManager.Mobile.Pages
         {
             try
             {
-                AllDatabases = await DatabaseService.GetAllDatabases() ?? new List<DatabaseViewModel>();
+                AllDatabases = await DatabaseService.GetAllDatabases() ?? new List<Database>();
             }
             catch (Exception ex)
             {
@@ -45,7 +47,7 @@ namespace DBManager.Mobile.Pages
             NavigationManager.NavigateTo($"database/{Uri.EscapeUriString(path)}");
         }
 
-        private async Task Delete(DatabaseViewModel database)
+        private async Task Delete(Database database)
         {
             try
             {

@@ -1,0 +1,73 @@
+@page "/tableDetails/{TableName}"
+<div class="card-component grid-card w-100 ">
+    <div class="card-component-header">
+        <div class="card-component-header-text">
+            @Table.Name
+            <div class="edit-icon ml-3" @onclick="EditName"></div>
+        </div>
+    </div>
+    <div class="card-component-toolbar">
+
+        <div @onclick="CreateRow">
+            <div class="add-icon"></div>
+            Add Row
+        </div>
+        <div @onclick="CreateColumn">
+            <div class="add-icon"></div>
+            Add Column
+        </div>
+    </div>
+    <div class="table-custom-body">
+        <div class="data-grid-container">
+            <table class="data-grid ">
+                <thead>
+                @for (var i = 0; i < Table.Columns.Count; i++)
+                {
+                    var columnIndex = i;
+                    <th>
+                        @Table.Columns[i].Name
+                        <div class="edit-icon ml-3" @onclick="@(() => EditColumnName(Table.Columns[columnIndex]))"></div>
+                        <div class="delete-icon ml-3" @onclick="@(() => DeleteColumn(columnIndex))"></div>
+                    </th>
+                }
+                <th style="width: 3rem; ">
+                </th>
+
+                </thead>
+                <tbody>
+                @for (var i = 0; i < Table.Rows.Count; i++)
+                {
+                    var row = Table.Rows[i];
+                    var rowIndex = i;
+                    <tr>
+                        @for (var j = 0; j < row.Values.Count; j++)
+                        {
+                            var columnIndex = j;
+                            if (Table.Columns[j].Type != ColumnType.Enum)
+                            {
+                                <td class="data-grid-cell">
+                                    <input value="@row.Values[j]" @onchange="@((args) => CellValueChanged(columnIndex, rowIndex, args))"/>
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="data-grid-cell">
+                                    <select class="custom-select" value="@Table.Columns[j].AvailableValues.FirstOrDefault(e => e == row.Values[j])" @onchange="@((args) => CellValueChanged(columnIndex, rowIndex, args))">
+                                        @foreach (var item in Table.Columns[j].AvailableValues)
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    </select>
+                                </td>
+                            }
+                        }
+                        <td class="data-grid-cell" style="width: 3rem;" @onclick="@(() => DeleteRow(rowIndex))">
+                            <div class="delete-icon"></div>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
